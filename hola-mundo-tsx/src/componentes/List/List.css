@@ -1,0 +1,15 @@
+.elementos {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  list-style: none;
+  border: 1px solid black;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.elemento {
+  margin-bottom: 5px;
+  font-size: 20px;
+}

@@ -1,16 +1,21 @@
 import React from "react";
-
+import './List.css'
 type props = {
-  lista?: string[];
+  lista: string[];
 };
 
-export const List: React.FC<props> = ({lista}) => {
-  
-
+export const List: React.FC<props> = ({ lista }) => {
   return (
-  <div>
-    <ul>
+    <div>
+      <ul className="elementos">
 
-    </ul>
-  </div>);
+        {lista.map((elemento) => (
+          <li key={elemento} className="elemento">
+            {elemento}
+          </li>
+          
+        ))}
+      </ul>
+    </div>
+  );
 };

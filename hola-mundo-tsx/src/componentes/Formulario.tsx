@@ -1,16 +1,17 @@
 import { useRef, useState } from "react";
 import "./Formulario.css";
+import { List } from "./List/List";
 const Formulario = () => {
-  const [nombre, setNombre] = useState<string>("hola mundo!!!!");
+  const [nombre, setNombre] = useState<string[]>(["hola mundo"]);
 
-  const elemento = <h1>{nombre}</h1>;
   const inputRef = useRef<HTMLInputElement>(null);
+
   const handleSummid = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  }
+  };
   const handleClick = () => {
     if (inputRef.current) {
-      setNombre(inputRef.current.value);
+      setNombre([...nombre, inputRef.current.value]);
     }
   };
   return (
@@ -25,10 +26,8 @@ const Formulario = () => {
             required
           />
           <button onClick={handleClick}>Agregar Nombre</button>
-
+          <List lista={nombre}></List>
         </form>
-
-        <div className="texto">{elemento}</div>
       </div>
     </>
   );

@@ -8,6 +8,12 @@ body{
   color: black;
 }
 
+#root{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
 h1{
   color:black;
   transition: .5s;
